@@ -47,4 +47,4 @@ Only nodes are working so a lot of stuff needs to be added. I think that it will
     - Ember-data: 1.0-beta5
     - Neo4j: 2.0.0
 
-    All the Neo4j REST API can be checked [here](http://docs.neo4j.org/chunked/milestone/rest-api.html)
+All the Neo4j REST API can be checked [here](http://docs.neo4j.org/chunked/milestone/rest-api.html)

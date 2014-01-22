@@ -40,3 +40,11 @@ I added a hideous app to test the adapter. It only has the Movie model and it's 
 
 ## Future
 Only nodes are working so a lot of stuff needs to be added. I think that it will be interesting to transform Ember findQueries into Neo4j traversals.
+
+## Versions
+
+    - Ember: 1.3.1
+    - Ember-data: 1.0-beta5
+    - Neo4j: 2.0.0
+
+    All the Neo4j REST API can be checked [here](http://docs.neo4j.org/chunked/milestone/rest-api.html)

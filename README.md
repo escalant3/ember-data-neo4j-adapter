@@ -12,10 +12,10 @@ This is the result of a challenge at the [Toronto Javascript Hack Night](http://
 This functionality may be interesting for the flexible schema possibilities that Neo4j offers. It would be possible to create and modify Ember models without database migrations or API updates.
 
 ## Considerations
-Neo4j is really flexible with data types. They are not even required. However, my idea was to allow to create models with it. The solution was to use Neo4j node labels as the model class. Any other model field will be stored as a node property.
+Neo4j is really flexible with data types. They are not even required. However, my idea was to allow the creation of models with it. The solution was to use Neo4j node labels as the model class. Any other model field will be stored as a node property.
 
 ## What is working?
-It is possible to specify DS.Models in an Ember application and the adapter will able to persist them. It is possible to:
+It is possible to specify DS.Models in an Ember application and the adapter will be able to persist them. The operations currently supported are:
 
  - Find all the nodes of a given type
  - Find a node by ID
@@ -24,19 +24,19 @@ It is possible to specify DS.Models in an Ember application and the adapter will
  - Delete a node
 
 ## Usage
-You will obviously need a Neo4j server. If you install it locally you need to allow cross-domain requests. You can do this editting your neo4j-server.properties and uncommenting the line:
+You will obviously need a Neo4j server. If you install it locally you need to allow cross-domain requests. This can be done editting the neo4j-server.properties and uncommenting the line:
 
     org.neo4j.server.webserver.address=0.0.0.0
 
-If your server is not running `http://localhost:7474/db/data/` you need to set the `host` property in the adapter.
+If your server is not running at `http://localhost:7474/db/data/` you need to set the `host` property in the adapter.
 
 ## Relationships
-I didn't have the time to add relationships support but if I have the chance I will add them.
+I didn't have the time to add relationships support but if I have the chance I will.
 
 ## Sample app
-I added a hideous app to test the adapter. It only has the Movie model and it's plain ugly HTML, but it does show how to use the adapter. You can use it by running a simple HTTP server:
+I added a hideous app to test the adapter. It only has the Movie model and it's plain ugly HTML, but it does show how to use the adapter. You can run it with a simple HTTP server:
 
     python -m SimpleHTTPServer
 
 ## Future
-Only nodes are working so a lot of stuff needs to be added. I think that it will be interesting to tranform Ember findQueries into Neo4j traversals.
+Only nodes are working so a lot of stuff needs to be added. I think that it will be interesting to transform Ember findQueries into Neo4j traversals.

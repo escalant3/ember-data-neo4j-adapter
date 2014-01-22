@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="vendor/jquery.min.js"></script>
+    <script src="vendor/handlebars.js"></script>
+    <script src="vendor/ember.js"></script>
+    <script src="vendor/ember-data.js"></script>
+    <script src="neo4j-adapter.js"></script>
+    <script src="app.js"></script>
+  </head>
+  <body>
+    <script type="text/x-handlebars" id="application">
+      {{ outlet }}
+    </script>
+
+    <script type="text/x-handlebars" id="index">
+      <h1>Types</h1>
+
+      <ul>
+        <li>{{#link-to 'movies'}}Movies{{/link-to}}</li>
+      </ul>
+    </script>
+
+    <script type="text/x-handlebars" id="movies">
+      <h1>Movies</h1>
+
+      New: {{input valueBinding="movieName"}}
+
+      {{#if movieName}}
+        <button {{action 'createMovie'}}>Create movie!</button>
+      {{/if}}
+
+      <ul>
+      {{#each}}
+        <li>{{#link-to 'movie' this}} {{title}} {{/link-to}}</li>
+      {{/each}}
+      </ul>
+
+    </script>
+
+    <script type="text/x-handlebars" id="movie">
+      <h1>{{title}}</h1>
+      <button {{action 'editTitle'}}>Edit</button>
+      <button {{action 'deleteMovie'}}>Delete</button>
+      <div>
+        {{#link-to 'movies'}}Back to movie list{{/link-to}}
+      </div>
+    </script>
+  </body>
+</html>
